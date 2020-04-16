@@ -1,38 +1,50 @@
 import React from "react";
-import {SpacialLocation, Planet, Station} from "../models";
+import {SpacialLocation} from "../models";
 import {hasPlanet, hasStation, planetColonized} from "../config";
+import { Card } from "react-bootstrap";
+import planetImg from "../assets/stock-images/planet-a-640x440.jpg";
+import emptyImg from "../assets/stock-images/empty_space_640x440.jpg";
 
 export interface SpacialLocationCardProps {
     location: SpacialLocation;
 }
 
-const PlanetCard = ({planet}: {planet: Planet}) => (
-    <div className="planet-card">{planet.name}</div>
-);
-const EmptyCard = () => (<div className="empty-card"/>);
-const StationCard = ({station}: {station: Station}) => (
-    <div className="station-card" title={station.name}/>
-);
-const NoStationCard = () => (<div className="station-card empty"/>);
-
 export const SpacialLocationCard = ({location}: SpacialLocationCardProps) => {
     const c = ['spacial-location-card'];
-    const isPlanet = hasPlanet(location);
+    const planet = hasPlanet(location) ? location.planet : null;
+    const station = hasStation(location) ? location.station : null;
     const isPlanetColonized = planetColonized(location);
-    const isStation = hasStation(location);
-    if (isPlanet) {
+    if (planet) {
         c.push('has-planet');
     }
     if (isPlanetColonized) {
         c.push('has-planet-colonized');
     }
-    if (isStation) {
+    if (station) {
         c.push('has-station');
     }
     return (
-        <div className={c.join(' ')} title={location.name}>
-            {hasPlanet(location) ? <PlanetCard planet={location.planet}/> : <EmptyCard />}
-            {hasStation(location) ? <StationCard station={location.station}/> : <NoStationCard />}
-        </div>
+        <Card className={c.join(' ')} title={location.name}>
+            <Card.Img variant="top" src={planet ? planetImg : emptyImg}/>
+            <Card.Body>
+                <Card.Title>{planet ? <span className={isPlanetColonized ? 'text-success' : 'text-info'}>{planet.name}</span> : location.name}</Card.Title>
+                <Card.Text as="div">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>Status</td>
+                            <td>
+                                {isPlanetColonized ? <span className="text-success">Colonized</span> : planet ? <span className="text-info">Habitable</span> : 'Empty'}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Station</td>
+                            <td>{station ? <p className="text-success">Yes</p> : 'No'}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
 };

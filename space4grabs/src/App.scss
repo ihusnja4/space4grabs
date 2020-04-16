@@ -5,17 +5,7 @@ $light-gray: #aaaaaa;
 
 }
 
-.galaxy-stats {
-  margin: 20px;
-  border: 2px solid $gray;
-}
-
 .star-system-card {
-  border: 1px solid $gray;
-  width: 200px;
-  height: 200px;
-  float: left;
-
   &:hover {
     background: $light-gray;
   }

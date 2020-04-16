@@ -1,9 +1,9 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import {generateGalaxy} from "./generator";
-import {GalaxyView} from "./views/GalaxyView";
+import {ErrorView, GalaxyView, StarSystemView} from "./views";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {StarSystemView} from "./views/StarSystemView";
 
 export default function App() {
     const galaxy = generateGalaxy('Milky Way');
@@ -17,7 +17,7 @@ export default function App() {
                     <StarSystemView galaxy={galaxy}/>
                 </Route>
                 <Route path="*">
-                    <p>Not found</p>
+                    <ErrorView message="Not Found" code={404}/>
                 </Route>
             </Switch>
         </BrowserRouter>

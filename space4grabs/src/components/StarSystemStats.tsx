@@ -19,7 +19,8 @@ export const StarSystemStats = ({system}: StarSystemStatsProps) => {
                     </tr>
                     <tr>
                         <td>Stations</td>
-                        <td>{system.contains.filter(l => hasStation(l)).length}</td>
+                        <td>{system.contains.filter(l => hasStation(l)).length} {' / '}
+                            {system.contains.length}</td>
                     </tr>
                 </tbody>
             </table>

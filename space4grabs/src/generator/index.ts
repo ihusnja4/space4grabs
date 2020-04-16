@@ -5,13 +5,13 @@ import {
     PLANET_PER_SYSTEM_MAX_SEED,
     PLANET_PER_SYSTEM_MIN_SEED,
     PLANET_CONSTRUCTION_LIST,
-    SYSTEM_NAMES
+    SYSTEM_NAMES, SYSTEMS_PER_GALAXY
 } from "../config";
 import {arrayShuffle, arrayWithSize} from "../util";
 
 function generatePlanet(location: SpacialLocation): Planet {
     return {
-        name: `${location.system.name} ${['b', 'c', 'd', 'e', 'f', 'g', 'i', 'j', 'k', 'l'][location.index]}`,
+        name: `${location.system.name} ${['B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'L', 'M', 'N'][location.index]}`,
         ofType: 'Planet',
         location,
         slots: Math.floor(Math.random() * (PLANET_MAX_SLOTS_SEED - PLANET_MIN_SLOTS_SEED)) + PLANET_MIN_SLOTS_SEED,
@@ -51,7 +51,7 @@ function generateStarSystem(name: string = 'Unknown System') {
         return system;
 }
 
-export function generateGalaxy(name: string, numberOfSystems = 10): Galaxy {
+export function generateGalaxy(name: string, numberOfSystems = SYSTEMS_PER_GALAXY): Galaxy {
     const names = arrayShuffle(SYSTEM_NAMES);
     return {
         name,
