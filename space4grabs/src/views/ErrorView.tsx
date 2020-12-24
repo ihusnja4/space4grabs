@@ -1,5 +1,5 @@
 import React from "react";
-import {Alert} from "react-bootstrap";
+import {Alert} from "reactstrap";
 import {MainLayout} from "../layouts";
 import {BackToGalaxyViewButton} from "../components";
 

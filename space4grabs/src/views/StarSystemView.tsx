@@ -4,7 +4,7 @@ import {BackToGalaxyViewButton, SpacialLocationCard, StarSystemStats} from "../c
 import {useParams} from "react-router-dom";
 import {MainLayout} from "../layouts";
 import {ErrorView} from "./ErrorView";
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col } from "reactstrap";
 import systemImg from '../assets/stock-images/sun-1515503_1920.jpg';
 
 export interface StarSystemViewProps {
@@ -29,7 +29,7 @@ export const StarSystemView = ({galaxy}: StarSystemViewProps) => {
                 </Col>
             </Row>
             <Row>
-                <Col sm={6}><Image rounded fluid src={systemImg} alt={system.name} className="my-3"/></Col>
+                <Col sm={6}><img src={systemImg} alt={system.name} className="my-3 img-fluid rounded"/></Col>
                 <Col sm={6}>
                     <h1 className="my-3">{system.name}</h1>
                     <StarSystemStats system={system}/>

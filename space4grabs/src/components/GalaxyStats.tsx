@@ -2,7 +2,7 @@ import React from "react";
 import {Galaxy} from "../models";
 import {arrayCountAggregate} from "../util";
 import {hasPlanet, hasStation, planetColonized} from "../config";
-import {Table} from "react-bootstrap";
+import {Table} from "reactstrap";
 
 export interface GalaxyStatsProps {
     galaxy: Galaxy;

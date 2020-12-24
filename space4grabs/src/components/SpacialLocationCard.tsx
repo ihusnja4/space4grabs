@@ -1,7 +1,7 @@
 import React from "react";
 import {SpacialLocation} from "../models";
 import {hasPlanet, hasStation, planetColonized} from "../config";
-import { Card } from "react-bootstrap";
+import { Card, CardImg, CardBody, CardText, CardTitle } from "reactstrap";
 import planetImg from "../assets/stock-images/planet-a-640x440.jpg";
 import emptyImg from "../assets/stock-images/empty_space_640x440.jpg";
 
@@ -25,10 +25,10 @@ export const SpacialLocationCard = ({location}: SpacialLocationCardProps) => {
     }
     return (
         <Card className={c.join(' ')} title={location.name}>
-            <Card.Img variant="top" src={planet ? planetImg : emptyImg}/>
-            <Card.Body>
-                <Card.Title>{planet ? <span className={isPlanetColonized ? 'text-success' : 'text-info'}>{planet.name}</span> : location.name}</Card.Title>
-                <Card.Text as="div">
+            <CardImg variant="top" src={planet ? planetImg : emptyImg}/>
+            <CardBody>
+                <CardTitle>{planet ? <span className={isPlanetColonized ? 'text-success' : 'text-info'}>{planet.name}</span> : location.name}</CardTitle>
+                <CardText as="div">
                     <table>
                         <tbody>
                         <tr>
@@ -43,8 +43,8 @@ export const SpacialLocationCard = ({location}: SpacialLocationCardProps) => {
                         </tr>
                         </tbody>
                     </table>
-                </Card.Text>
-            </Card.Body>
+                </CardText>
+            </CardBody>
         </Card>
     );
 };
