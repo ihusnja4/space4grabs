@@ -9,7 +9,7 @@ export interface ErrorViewProps {
     error?: Error;
 }
 
-export const ErrorView = ({message = 'Unknown Error', code = 599, error = undefined}: ErrorViewProps) => (
+export const ErrorView = ({message = 'Unknown Error', code = 599}: ErrorViewProps) => (
     <MainLayout>
         <BackToGalaxyViewButton/>
         <Alert variant="danger">{code} {message}</Alert>
