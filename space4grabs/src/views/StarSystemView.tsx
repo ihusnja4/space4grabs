@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {Galaxy} from "../models";
 import {BackToGalaxyViewButton, SpacialLocationCard, StarSystemStats} from "../components";
 import {useParams} from "react-router-dom";

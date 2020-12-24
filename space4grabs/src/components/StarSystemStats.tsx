@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {StarSystem} from "../models";
 import {hasPlanet, hasStation, planetColonized} from "../config";
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {StarSystem} from "../models";
 import {StarSystemStats} from "./StarSystemStats";
 import {Link} from "react-router-dom";

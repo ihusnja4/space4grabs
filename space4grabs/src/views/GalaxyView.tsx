@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {Galaxy} from "../models";
 import {GalaxyStats, StarSystemCard} from "../components";
 import {MainLayout} from "../layouts";
