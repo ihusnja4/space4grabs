@@ -15,7 +15,7 @@ export const StarSystemCard = ({system, index}: StarSystemCardProps) => (
         <Link to={'/system/' + index}><CardImg variant="top" src={img}/></Link>
         <CardBody>
             <CardTitle><Link to={'/system/' + index}>{system.name}</Link></CardTitle>
-            <CardText as="div">
+            <CardText tag="div">
                 <StarSystemStats system={system}/>
             </CardText>
         </CardBody>

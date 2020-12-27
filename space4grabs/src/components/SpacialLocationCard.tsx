@@ -28,7 +28,7 @@ export const SpacialLocationCard = ({location}: SpacialLocationCardProps) => {
             <CardImg variant="top" src={planet ? planetImg : emptyImg}/>
             <CardBody>
                 <CardTitle>{planet ? <span className={isPlanetColonized ? 'text-success' : 'text-info'}>{planet.name}</span> : location.name}</CardTitle>
-                <CardText as="div">
+                <CardText tag="div">
                     <table>
                         <tbody>
                         <tr>
