@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import {generateGalaxy} from "./generator";
-import {ErrorView, GalaxyView, StarSystemView} from "./views";
+import {ErrorView, GalaxyView, GameConceptsView, StarSystemView} from "./views";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 export default function App() {
@@ -12,6 +12,9 @@ export default function App() {
             <Switch>
                 <Route path="/" exact>
                     <GalaxyView galaxy={galaxy}/>
+                </Route>
+                <Route path="/game-concepts">
+                    <GameConceptsView/>
                 </Route>
                 <Route path="/system/:index">
                     <StarSystemView galaxy={galaxy}/>
