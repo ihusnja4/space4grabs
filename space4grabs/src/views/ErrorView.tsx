@@ -12,9 +12,9 @@ export interface ErrorViewProps {
 export const ErrorView = ({message = 'Unknown Error', code = 599}: ErrorViewProps) => (
     <MainLayout>
         <Row>
-            <Col className="pt-2">
+            <Col className="pt-3">
                 <BackToGalaxyViewButton/>
-                <Alert color="danger" className="mt-2">{code} {message}</Alert>
+                <Alert color="danger" className="mt-3">{code} {message}</Alert>
             </Col>
         </Row>
     </MainLayout>

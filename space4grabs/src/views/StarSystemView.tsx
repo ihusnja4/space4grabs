@@ -23,7 +23,7 @@ export const StarSystemView = ({galaxy}: StarSystemViewProps) => {
     }
     return (
         <MainLayout containerProps={{className: 'galaxy-view'}}>
-            <Row>
+            <Row className="mt-3">
                 <Col>
                     <BackToGalaxyViewButton/>
                 </Col>
