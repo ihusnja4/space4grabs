@@ -11,6 +11,6 @@ export interface SpacialLocationWithStation extends SpacialLocation {
 export const oppositeOf = <T = void>(f: (...args: T[]) => boolean) => (...args: T[]) => !f(...args);
 export const hasPlanet = (l: SpacialLocation): l is SpacialLocationWithPlanet => l.planet !== null;
 export const hasStation = (l: SpacialLocation): l is SpacialLocationWithStation => l.station !== null;
-export const planetColonized = (l: SpacialLocation): l is SpacialLocationWithPlanet => hasPlanet(l) && l.planet.buildings.includes(Colony);
+export const planetColonized = (l: SpacialLocation): l is SpacialLocationWithPlanet => hasPlanet(l) && l.planet.constructions.includes(Colony);
 export const stationConstructed = (l: SpacialLocation) => l.station !== null;
-export const maxBuildingOfType = (ofType: string, max: number) => (l: SpacialLocation) => planetColonized(l) && l.planet.buildings.filter(b => b.ofType === ofType).length < max;
+export const maxBuildingOfType = (ofType: string, max: number) => (l: SpacialLocation) => planetColonized(l) && l.planet.constructions.filter(b => b.ofType === ofType).length < max;

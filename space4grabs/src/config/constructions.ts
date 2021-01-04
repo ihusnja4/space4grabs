@@ -8,8 +8,7 @@ export const Colony: Construction = {
     buildTime: 5,
     upkeepCost: 0,
     generateIncome: 100,
-    powerOutput: 100,
-    powerDrain: 0,
+    power: 100,
     slots: 0,
     requirements: [oppositeOf(planetColonized)]
 };
@@ -20,8 +19,7 @@ export const LivingCompound: Construction = {
     buildTime: 8,
     upkeepCost: 0,
     generateIncome: 250,
-    powerOutput: 0,
-    powerDrain: 100,
+    power: -100,
     slots: 1,
     requirements: [planetColonized]
 };
@@ -32,8 +30,7 @@ export const MiningFacility: Construction = {
     buildTime: 4,
     upkeepCost: 100,
     generateIncome: 500,
-    powerOutput: 0,
-    powerDrain: 100,
+    power: -100,
     slots: 1,
     requirements: [planetColonized]
 };
@@ -44,8 +41,7 @@ export const SolarPowerPlant: Construction = {
     buildTime: 4,
     upkeepCost: 100,
     generateIncome: 0,
-    powerOutput: 500, // max power output
-    powerDrain: 0,
+    power: 500, // TODO max power output
     slots: 1,
     requirements: [planetColonized]
 };
@@ -56,8 +52,7 @@ export const FusionReactor: Construction = {
     buildTime: 12,
     upkeepCost: 800,
     generateIncome: 0,
-    powerOutput: 2500,
-    powerDrain: 0,
+    power: 2500,
     slots: 2,
     requirements: [planetColonized, maxBuildingOfType('FusionReactor', 1)]
 };
@@ -68,8 +63,7 @@ export const SpacePort: Construction = {
     buildTime: 24,
     upkeepCost: 0,
     generateIncome: 1000,
-    powerOutput: 0,
-    powerDrain: 1500,
+    power: -1500,
     slots: 4,
     requirements: [planetColonized, maxBuildingOfType('SpacePort', 1)]
 };
@@ -80,8 +74,7 @@ export const AssemblyFactory: Construction = {
     buildTime: 16,
     upkeepCost: 400,
     generateIncome: 0,
-    powerOutput: 0,
-    powerDrain: 1000,
+    power: -1000,
     slots: 4,
     requirements: [planetColonized, maxBuildingOfType('AssemblyFactory', 1)]
 };
@@ -92,8 +85,7 @@ export const Station: Construction = {
     buildTime: 5,
     upkeepCost: STATION_INIT_UPKEEP,
     generateIncome: 0,
-    powerOutput: STATION_INIT_POWER_OUTPUT,
-    powerDrain: 0,
+    power: STATION_INIT_POWER_OUTPUT, // TODO max power output
     slots: 0,
     requirements: [oppositeOf(stationConstructed)]
 };
@@ -104,8 +96,7 @@ export const LivingModule: Construction = {
     buildTime: 12,
     upkeepCost: 0,
     generateIncome: 250,
-    powerOutput: 0,
-    powerDrain: 100,
+    power: -100,
     slots: 1,
     requirements: [stationConstructed]
 };
@@ -116,8 +107,7 @@ export const SolarArrayModule: Construction = {
     buildTime: 4,
     upkeepCost: 0,
     generateIncome: 0,
-    powerOutput: 1000,
-    powerDrain: 0,
+    power: 1000, // TODO max power output
     slots: 1,
     requirements: [stationConstructed]
 };
@@ -128,8 +118,7 @@ export const FusionModule: Construction = {
     buildTime: 18,
     upkeepCost: 800,
     generateIncome: 0,
-    powerOutput: 2500,
-    powerDrain: 0,
+    power: 2500,
     slots: 2,
     requirements: [stationConstructed, maxBuildingOfType('FusionModule', 1)]
 };
@@ -140,8 +129,7 @@ export const SpaceDocks: Construction = {
     buildTime: 24,
     upkeepCost: 0,
     generateIncome: 1000,
-    powerOutput: 0,
-    powerDrain: 1500,
+    power: -1500,
     slots: 4,
     requirements: [stationConstructed, maxBuildingOfType('SpaceDocks', 1)]
 };

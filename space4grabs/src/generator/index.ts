@@ -15,8 +15,9 @@ function generatePlanet(location: SpacialLocation): Planet {
         ofType: 'Planet',
         location,
         slots: Math.floor(Math.random() * (PLANET_MAX_SLOTS_SEED - PLANET_MIN_SLOTS_SEED)) + PLANET_MIN_SLOTS_SEED,
-        constructionList: PLANET_CONSTRUCTION_LIST,
-        buildings: [],
+        reservedSlots: 0,
+        availableConstructionList: PLANET_CONSTRUCTION_LIST,
+        constructions: [],
         queue: []
     };
 }
@@ -26,7 +27,9 @@ function generateSpacialLocation(system: StarSystem, index: number): SpacialLoca
         index,
         system,
         planet: null,
-        station: null
+        station: null,
+        credits: 0,
+        ships: []
     };
 }
 function generateSpacialLocationWithPlanet(system: StarSystem, index: number) {
